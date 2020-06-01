@@ -27,19 +27,22 @@ const translator = new Translator();
 	mod.hook('C_CHAT',1,(event)=>{
 	if(event.type === 0 && enabled){
 		if(event.message.includes('?ely')) {
-			//console.log('ELYOS CHAT Translator '+event.message)
-			let test = translator.translateHelper(event.message);
-			event.message = test;
-			console.log(event.message && event.type)
-			return true;
+			var string = event.message.substring(4)
+			let test = translator.translateHelper(string);
+			//event.message = test;
+			console.log(test)
+			return false;
 		}
 		else if(event.message.includes('?asmo')) {
-		//	console.log('ASMO CHAT Translator '+event.message)
 		let isAsmoSelected = true;
-		let test2 = translator.translateHelper(event.message, isAsmoSelected)
-		event.message = test2;
-		console.log(event.message && event.type)
-		return true;
+		var string = event.message.substring(5)
+		let test2 = translator.translateHelper(string, isAsmoSelected)
+		//event.message = test2;
+		console.log(test2)
+		return false;
+		}
+		if (event.type === 36){
+			return false;
 		}
 	}
 	})
