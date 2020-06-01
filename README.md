@@ -1,6 +1,7 @@
 # INFO
-* Elyos <-> Asmodian Translation is nearly done.
-* nromal Translation is WIP atm.
+* Elyos <-> Asmodian Translation is done.
+* nnormal translation worked now.
+* need to find a soulution why we get kicked when the script try to replace the current message.
 
 
 
