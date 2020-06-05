@@ -17,39 +17,39 @@ const translator = new Translator();
 		let race = FACTIONS.find(obj=>obj.raceid === event.canRead).name;
 		if (event.type === 0 && enabled)
 				if (race === 'Elyos'){
-					console.log('[translator] | '+race+'->Asmo'+' | '+event.gameId+' | '+event.name+' | '+event.message)
+					mod.log.info('[translator] | '+race+'->Asmo'+' | '+event.gameId+' | '+event.name+' | '+event.message)
 					}
 					else if (race === 'Asmo'){
-					console.log('[translator] | '+race+'->Elyos'+' | '+event.gameId+' | '+event.name+' | '+event.message)
+					mod.log.info('[translator] | '+race+'->Elyos'+' | '+event.gameId+' | '+event.name+' | '+event.message)
 					}
 	});
-	// TO DO remove ?ely / ?asmo in translated text
 	mod.hook('C_CHAT',1,(event)=>{
 	if(event.type === 0 && enabled){
 		if(event.message.includes('?ely')) {
 			var string = event.message.substring(4)
 			let test = translator.translateHelper(string);
-			//event.message = test;
-			console.log(test)
-			return false;
+			event.message = test;
+			//mod.log.info(test) debug
+			return true;
 		}
 		else if(event.message.includes('?asmo')) {
 		let isAsmoSelected = true;
 		var string = event.message.substring(5)
 		let test2 = translator.translateHelper(string, isAsmoSelected)
-		//event.message = test2;
-		console.log(test2)
-		return false;
+		event.message = test2;
+		//mod.log.info(test2) debug
+		return true;
 		}
 		if (event.type === 36){
 			return false;
 		}
 	}
 	})
+	
 	// ?ely | ?asmo
 	command.add('translator',()=>{
 		enabled = !enabled
-	console.log(`Translator is now: ${enabled ? "enabled" : "disabled"}.`);
+	mod.log.info(`Translator is now: ${enabled ? "enabled" : "disabled"}.`);
 	});
 
 	}

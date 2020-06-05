@@ -1,0 +1,12 @@
+{
+    "files": {
+        "index.js": "e575846fbb70e3866a879a4b26fc8f40daefade3822b2cfc8ff29040b9ba99b1",
+        "lib/letter-key-map.js": "0a090dc05f7351a4812837b975eba198ad6e1167ebae4259dc7586b2fddad9e8",
+        "lib/translator.js": "6752313baeccb87f739e7ff4098cddd8b39b9717ed3343f8b6dcee839b162ae6",
+        "mod.json": "b57f006d76f2a6611f499fea08a6544b78e70ce819c1eb2d9a7f170a84f62972"
+    },
+    "defs": {
+        "C_CHAT": 1,
+        "S_MESSAGE": 1
+    }
+}
