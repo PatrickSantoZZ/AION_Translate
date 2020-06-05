@@ -1,6 +1,7 @@
 {
 	"name": "Translator",
 	"reloadable": true,
+	"update": "github:PatrickSantoZZ/AION_Translate",
 	"title": "Translator",
 	"author": "NekoNekoo",
 	"description": "Translator for AION Online | Elyos to Asmo and backwards."
